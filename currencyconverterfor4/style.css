@@ -1,0 +1,46 @@
+.valuee {
+    align-items: center;
+    
+}
+h1{
+    color: white;
+    font-size:450%;
+    
+}
+body{
+    background-image:url(https://img.freepik.com/free-vector/wave-background-abstract-gradient-design_483537-3688.jpg?t=st=1710776663~exp=1710780263~hmac=595138180436b412d2dd5078e7e062509f3288faecaa22c8cf1fdf9f731b6587&w=996) ;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: cover;
+    background-position: 100%;
+}
+label{
+    color: aliceblue;
+    font-size: xx-large;
+}
+#content{
+    
+    background: transparent;
+    backdrop-filter: blur(10px);
+    height: 500px;
+    width: 500px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    
+}
+h2{
+    color: white;
+}
+.text{
+    background: url(https://media.istockphoto.com/id/589422272/photo/many-currency.jpg?s=612x612&w=0&k=20&c=vsBFoQDhWZH7DE6yqZdO2R3SLtcYMpT_c6_3Ztsf-ME=)0 0/cover no-repeat;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;      
+}
+input{
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+}
+select{
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+}
