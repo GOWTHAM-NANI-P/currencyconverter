@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>currency converter</title>
+    <style>
+        .valuee {
+            align-items: center;
+            
+        }
+        h1{
+            color: white;
+            font-size:450%;
+            
+        }
+        body{
+            background-image: url(https://img.freepik.com/free-vector/digital-money-transfer-technology-background_1017-17454.jpg?w=826&t=st=1709968566~exp=1709969166~hmac=a843c1ab07e443cd707ec27043bf6240473da8bedace91f92413092b4adac8ffhttps://img.freepik.com/premium-vector/money-transfer-global-currency-stock-exchange_115579-923.jpg?w=1380 );
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment:fixed ;
+        }
+        label{
+            color: aliceblue;
+            font-size: xx-large;
+        }
+        #content{
+            background: transparent;
+            backdrop-filter: blur(10px);
+            height: 500px;
+            width: 500px;
+            border: 1px solid gray;
+            border-radius: 8px;
+        }
+        h2{
+            color: white;
+        }
+        .text{
+            background: url(https://media.istockphoto.com/id/589422272/photo/many-currency.jpg?s=612x612&w=0&k=20&c=vsBFoQDhWZH7DE6yqZdO2R3SLtcYMpT_c6_3Ztsf-ME=)0 0/cover no-repeat;
+            -webkit-background-clip:text;
+            -webkit-text-fill-color: transparent;      
+        }
+    </style>
+</head>
+<body>
+    <div align="center" >
+        <h1 class="text">Currency Converter</h1>
+        <div id="content">
+            <br><br><br>
+        <label class="text">Amount:</label>
+        <input type="number" placeholder="Enter your currency" min="0" id="ele" ><br>
+        <br><br>
+        <label for="input" class="text">From:</label>
+        <select name="input" id="input">
+            <option value="">select</option> 
+            <option value="USD">USD</option>
+            <option value="INR">INR</option>
+            <option value="KWD">KWD</option>
+            <OPTion value="EURO">EURO</OPTion>
+        </select>
+        <br><br><br>
+        <label for="output" class="text">To:</label>
+        <select name="output" id="output">
+            <option value="">select</option> 
+            <option value="USD">USD</option>
+            <option value="INR">INR</option>
+            <option value="KWD">KWD</option>
+            <OPTion value="EURO">EURO</OPTion>
+        </select><br>
+        <br><br><br>
+        <button onclick="convertCurrency()" >Convert</button>
+        <br><br><br>
+        <h2 id="ans">00.00</h2>
+    </div>
+    </div>
+
+    <script>
+        function convertCurrency() {
+            var amount = parseFloat(document.getElementById('ele').value);
+            var fromCurrency = document.getElementById('input').value;
+            var toCurrency = document.getElementById('output').value;
+            var conversionRate;
+
+            var conversionRates = {
+                'USD': {
+                    'INR': 82.75,  
+                    'KWD': 0.31,  
+                    'EURO':0.91
+                },
+                'INR': {
+                    'USD': 0.012, 
+                    'KWD': 0.0037, 
+                    'EURO':0.011
+                },
+                'KWD': {
+                    'USD': 3.26,  
+                    'INR': 269.49,
+                    'EURO':2.98
+                },
+                'EURO':{
+                    'INR': 90.56,  
+                    'KWD': 0.34,  
+                    'USD':1.09
+                }
+            };
+
+            
+            conversionRate = conversionRates[fromCurrency][toCurrency];
+
+            
+            var convertedAmount = amount * conversionRate;
+
+            
+            document.getElementById('ans').innerHTML = convertedAmount.toFixed(2);
+        }
+    </script>
+</body>
+</html>
